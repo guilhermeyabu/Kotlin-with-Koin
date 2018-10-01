@@ -14,7 +14,7 @@ class PokemonActivity : AppCompatActivity() {
   
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    val binding : ActivityPok = DataBindingUtil.
+    val binding : ActivityPokemonBinding = DataBindingUtil.
         setContentView(this, R.layout.activity_pokemon)
     
     attachPokemonFragment()

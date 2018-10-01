@@ -8,21 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import inatel.br.kotlinexample.R
 import inatel.br.kotlinexample.databinding.FragmentPokemonBinding
-import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
 
 class PokemonFragment : Fragment() {
   
   private lateinit var mBinding: FragmentPokemonBinding
   
-  private lateinit var mViewModel: PokemonViewModel
+  private val mViewModel: PokemonViewModel by inject()
   
   override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     super.onCreateView(inflater, container, savedInstanceState)
     
     mBinding = DataBindingUtil.inflate(layoutInflater, R.layout
         .fragment_pokemon, container, false)
-    
-    mViewModel = get()
     
     return mBinding.root
   }
