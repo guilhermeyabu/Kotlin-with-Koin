@@ -6,8 +6,7 @@ import io.reactivex.schedulers.Schedulers
 
 abstract class BaseContract {
   
-  protected fun <T> Observable<T>.applySchedulers(): Observable<T> {
-    return subscribeOn(Schedulers.computation()).observeOn(AndroidSchedulers.mainThread())
-  }
+  fun <T> Observable<T>.applySchedulers(): Observable<T> = subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+  
   
 }

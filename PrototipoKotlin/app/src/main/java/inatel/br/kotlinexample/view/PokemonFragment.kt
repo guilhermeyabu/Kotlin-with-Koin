@@ -16,7 +16,7 @@ class PokemonFragment : Fragment() {
   
   private val mViewModel: PokemonViewModel by inject()
   
-  override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     super.onCreateView(inflater, container, savedInstanceState)
     
     mBinding = DataBindingUtil.inflate(layoutInflater, R.layout
