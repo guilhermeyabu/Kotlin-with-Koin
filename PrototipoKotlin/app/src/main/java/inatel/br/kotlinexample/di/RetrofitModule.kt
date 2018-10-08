@@ -1,7 +1,8 @@
 package inatel.br.kotlinexample.di
 
 import inatel.br.kotlinexample.BuildConfig
-import inatel.br.kotlinexample.view.PokemonViewModel
+import inatel.br.kotlinexample.network.PokemonContract
+import inatel.br.kotlinexample.network.PokemonRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.module
@@ -11,6 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val retrofitModule = module {
   single { providesRetrofitAdapter() }
+  single {  PokemonContract() }
+  single {  PokemonRepository(get()) }
 }
 
 fun providesRetrofitAdapter(): Retrofit {
